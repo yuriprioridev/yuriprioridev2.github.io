@@ -1,139 +1,148 @@
-body{
+/* RESET BÁSICO */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 
-font-family: Arial;
-background-color: #f5f5f5;
-
+    background: linear-gradient(-45deg, #1e3c72, #2a5298, #6dd5ed, #2193b0);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    color: white;
 }
 
-h1{
-
-text-align: center;
-margin-top: 30px;
-font-size: 40px;
-
+/* ANIMAÇÃO DO FUNDO */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-#artistas{
-
-display: flex;
-justify-content: center;
-gap: 60px;
-margin-top: 40px;
-
+/* TÍTULOS */
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 40px;
 }
 
-.artista{
-
-text-align: center;
-
+h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: white;
+    margin: 10px auto;
+    border-radius: 10px;
 }
 
-.artista p{
-
-font-size: 24px;
-font-weight: bold;
-
+h2 {
+    text-align: center;
+    margin-top: -10px;
+    font-weight: normal;
 }
 
-.artista img{
-
-width: 180px;
-border-radius: 12px;
-border: 3px solid #333;
-
-box-shadow: 0px 6px 15px rgba(0,0,0,0.3);
-
-cursor: pointer;
-
-transition: transform 0.3s, box-shadow 0.3s;
-
+/* GALERIA */
+#artistas {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
-.artista img:hover{
+/* CARD DO ARTISTA */
+.artista {
+    text-align: center;
 
-transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 
-box-shadow: 0px 12px 25px rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 15px;
 
+    width: 220px;
+
+    transition: 0.3s;
 }
 
-.obra{
-
-width: 400px;
-display: block;
-margin: auto;
-
-border-radius: 10px;
-
-box-shadow: 0px 8px 20px rgba(0,0,0,0.4);
-
+.artista:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 15px 30px rgba(0,0,0,0.4);
 }
 
-.descricao{
-
-width: 60%;
-margin: auto;
-text-align: center;
-font-size: 18px;
-
+/* NOME DO ARTISTA */
+.artista p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.botao{
+/* IMAGEM DO ARTISTA */
+.artista img {
+    width: 100%;
+    border-radius: 12px;
+    border: 3px solid #fff;
 
-display: block;
-width: 200px;
-margin: auto;
-text-align: center;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.3);
 
-background-color: black;
-color: white;
-padding: 10px;
-
-text-decoration: none;
-border-radius: 8px;
-
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.botao:hover{
-
-background-color: gray;
-
+.artista img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 12px 25px rgba(0,0,0,0.5);
 }
 
-h1{
-text-align: center;
+/* PÁGINA DAS OBRAS */
+.obra {
+    width: 400px;
+    display: block;
+    margin: 30px auto;
+
+    padding: 15px;
+
+    background-color: #fff;
+
+    border: 12px solid #8b5a2b;
+
+    box-shadow: 
+    0px 10px 25px rgba(0,0,0,0.5),
+    inset 0px 0px 10px rgba(0,0,0,0.3);
+
+    border-radius: 4px;
+
+    transition: transform 0.4s;
 }
 
-h2{
-text-align: center;
-margin-top: -10px;
-font-weight: normal;
+.obra:hover {
+    transform: scale(1.08);
 }
 
-.obra{
-
-width: 400px;
-display: block;
-margin: 30px auto;
-
-padding: 15px;
-
-background-color: #fff;
-
-border: 12px solid #8b5a2b;
-
-box-shadow: 
-0px 10px 25px rgba(0,0,0,0.5),
-inset 0px 0px 10px rgba(0,0,0,0.3);
-
-border-radius: 4px;
-
-transition: transform 0.4s;
-
+/* DESCRIÇÃO */
+.descricao {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
 }
 
-.obra:hover{
+/* BOTÃO */
+.botao {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
 
-transform: scale(1.08);
+    background-color: black;
+    color: white;
+    padding: 10px;
 
+    text-decoration: none;
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: gray;
 }
